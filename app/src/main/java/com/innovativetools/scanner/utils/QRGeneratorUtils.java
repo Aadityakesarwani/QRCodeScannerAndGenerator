@@ -1,0 +1,252 @@
+package com.innovativetools.scanner.utils;
+
+import static android.content.Context.WINDOW_SERVICE;
+
+import android.Manifest;
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
+import android.os.StrictMode;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
+import android.widget.Toast;
+
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.innovativetools.scanner.generatecodes.Contents;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.security.Permission;
+import java.text.FieldPosition;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
+public class QRGeneratorUtils {
+
+    private static final String IMAGE_FOLDER = "Created QR Codes";
+
+
+    private static Uri cache = null;
+
+    public static void shareImage(AppCompatActivity context, Uri imageUri) {
+
+        StrictMode.VmPolicy.Builder builder =new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+
+        if (context == null) {
+            throw new IllegalArgumentException("null");
+        }
+
+        final Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        intent.setType("image/png");
+        intent.putExtra(Intent.EXTRA_STREAM, imageUri);
+        context.startActivity(Intent.createChooser(intent, "Share via"));
+    }
+
+
+    public static void purgeCacheFolder(Context context) {
+        try {
+            File imageFilePath = new File(context.getCacheDir(), "images/");
+            File[] files = imageFilePath.listFiles();
+            if (files != null) {
+                for (File file : files) {
+                    file.delete();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Uri cacheImage(Context context, Bitmap image) {
+        if (image == null) {
+            throw new IllegalArgumentException("Image must not be null");
+        }
+        File imageFilePath = new File(context.getCacheDir(), "images/");
+        imageFilePath.mkdir();
+        imageFilePath = new File(imageFilePath, buildFileString());
+        File file = writeToFile(imageFilePath, image);
+        cache = FileProvider.getUriForFile(context, "com.innovativetools.fileprovider", file);
+        return cache;
+    }
+
+    public static Uri getCachedUri() {
+        return cache;
+    }
+
+    public static Uri createImage(Context context, String qrInputText, Contents.Type qrType, BarcodeFormat barcodeFormat, String errorCorrectionLevel) {
+
+        //Find screen size
+        WindowManager manager = (WindowManager) context.getSystemService(WINDOW_SERVICE);
+        Display display = manager.getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        int width = point.x;
+        int height = point.y;
+        int smallerDimension = width < height ? width : height;
+        smallerDimension = smallerDimension * 3 / 4;
+
+        //Encode with a QR Code image
+        QRCodeEncoder qrCodeEncoder = new QRCodeEncoder(qrInputText,
+                null,
+                qrType,
+                barcodeFormat.toString(),
+                smallerDimension);
+        Bitmap bitmap_ = null;
+        try {
+            bitmap_ = qrCodeEncoder.encodeAsBitmap(errorCorrectionLevel);
+            // return bitmap_;
+
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+
+        return cacheImage(context, bitmap_);
+    }
+
+    public static void saveCachedImageToExternalStorage(Context context) {
+        Bitmap bitmap = null;
+        try {
+            bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), cache);
+            saveImageToExternalStorage(context, bitmap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(context, "saved", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public static void saveImageToExternalStorage(Context context, Bitmap finalBitmap) throws IOException {
+        final String fileName = buildFileString();
+
+        OutputStream oStream;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ContentResolver resolver = context.getContentResolver();
+            Uri imageCollection = MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
+
+            final String relativePath = Environment.DIRECTORY_PICTURES + File.separator + IMAGE_FOLDER;
+
+            ContentValues newImage = new ContentValues();
+            newImage.put(MediaStore.Images.Media.DISPLAY_NAME, fileName);
+            newImage.put(MediaStore.Images.Media.MIME_TYPE, "image/png");
+            newImage.put(MediaStore.Images.ImageColumns.RELATIVE_PATH, relativePath);
+
+            Uri imageUri = resolver.insert(imageCollection, newImage);
+            oStream = resolver.openOutputStream(imageUri);
+            finalBitmap.compress(Bitmap.CompressFormat.PNG, 100, oStream);
+
+            Toast.makeText(context, "saved", Toast.LENGTH_SHORT).show();
+        } else
+
+        {
+
+                    FileOutputStream outputStream = null;
+                    File file = Environment.getExternalStorageDirectory();
+                    File dir =new File(file.getAbsoluteFile() + "/GeneratedQr");
+
+                    dir.mkdirs();
+
+                    String filename = String.format("%d.png",System.currentTimeMillis());
+
+                    File outputfile = new File(dir,filename);
+                    try {
+                        outputStream = new FileOutputStream(outputfile);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                    finalBitmap.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+
+                    try{
+                        outputStream.flush();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    try {
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(context.getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
+
+            }
+
+    }
+
+
+
+
+
+
+    private static @NonNull
+    String buildFileString() {
+        // Define name
+        StringBuffer sb = new StringBuffer();
+        sb.append("QrCode_");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.getDefault());
+        sdf.format(Calendar.getInstance().getTime(), sb, new FieldPosition(SimpleDateFormat.DATE_FIELD));
+        sb.append(".png");
+        return sb.toString();
+    }
+
+    private static @Nullable
+    File writeToFile(@NonNull File file, @NonNull Bitmap image) {
+        File outFile = file;
+        StringBuilder sb = new StringBuilder(file.toString());
+
+        for (int i = 2; outFile.exists(); i++) {
+            sb.delete(sb.length() - 4, sb.length());
+            sb.append("_(").append(i).append(").png");
+            outFile = new File(sb.toString());
+        }
+
+        try (FileOutputStream fOut = new FileOutputStream(outFile)) {
+            image.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return outFile;
+    }
+
+
+    public static String escapeQRPropertyValue(String value) {
+        return value.replace("\\", "\\\\")
+                .replace(",", "\\,")
+                .replace(":", "\\:")
+                .replace(";", "\\;");
+    }
+
+
+
+
+
+}

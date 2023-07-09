@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--<SwitchPreference-->
+<!--    android:defaultValue="false"-->
+<!--    android:key="darktheme"-->
+<!--    android:title="Dark Theme"-->
+<!--    android:icon="@drawable/darkmode"-->
+<!--    />-->
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="enablebeep"
+        android:title="Beep on scan"
+        android:icon="@drawable/sound"
+        />
+
+    <SwitchPreference
+    android:defaultValue="false"
+    android:key="autoopenurl"
+    android:title="Auto open Websites"
+    android:icon="@drawable/openlink"
+
+    />
+
+
+</PreferenceScreen>

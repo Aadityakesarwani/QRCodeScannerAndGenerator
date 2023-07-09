@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".createcodes.Location">
+
+
+
+   <LinearLayout
+       android:id="@+id/inputlayout"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/textInputLayout"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           style="@style/AppTheme.InputTextlayout.anim"
+           android:layout_marginHorizontal="25dp"
+           android:layout_marginTop="32dp">
+
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/latitude"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="45dp"
+               android:inputType="number|numberDecimal"
+               android:hint="@string/latitude"
+               />
+
+       </com.google.android.material.textfield.TextInputLayout>
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           style="@style/AppTheme.InputTextlayout.anim"
+           android:layout_marginHorizontal="25dp"
+           android:layout_marginTop="32dp">
+
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/longitude"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:minHeight="45dp"
+               android:inputType="number|numberDecimal"
+               android:hint="@string/longitude"
+               />
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+<!--       <com.google.android.material.textfield.TextInputLayout-->
+
+<!--           android:layout_width="match_parent"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           android:layout_marginHorizontal="25dp"-->
+<!--           android:layout_marginTop="32dp"-->
+<!--           >-->
+
+<!--           <com.google.android.material.textfield.TextInputEditText-->
+<!--               android:id="@+id/latitude"-->
+<!--               android:layout_width="match_parent"-->
+<!--               android:layout_height="wrap_content"-->
+<!--               android:minHeight="45dp"-->
+<!--               android:inputType="textMultiLine"-->
+<!--               android:hint="@string/phone_number"/>-->
+
+
+<!--       </com.google.android.material.textfield.TextInputLayout>-->
+<!--       <com.google.android.material.textfield.TextInputLayout-->
+<!--           android:id="@+id/textInputLayout"-->
+<!--           android:layout_width="match_parent"-->
+<!--           android:layout_height="wrap_content"-->
+<!--           android:layout_marginHorizontal="25dp"-->
+<!--           android:layout_marginTop="32dp"-->
+<!--           >-->
+
+<!--           <com.google.android.material.textfield.TextInputEditText-->
+<!--               android:id="@+id/longitude"-->
+<!--               android:layout_width="match_parent"-->
+<!--               android:layout_height="wrap_content"-->
+<!--               android:minHeight="45dp"-->
+<!--               android:inputType="textMultiLine"-->
+<!--               android:hint="@string/phone_number"/>-->
+
+
+<!--       </com.google.android.material.textfield.TextInputLayout>-->
+
+   </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/outputlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:id="@+id/generated_qr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="50dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:background="@color/fade_white"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_below="@id/generated_qr"
+            android:layout_toStartOf="@id/share_generated_qr"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/save"
+            android:scaleType="centerInside"
+            android:background="@drawable/background_circle"
+            android:id="@+id/save_generated_qr"
+            />
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/generated_qr"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/share"
+            android:scaleType="centerInside"
+            android:background="@drawable/background_circle_orange"
+            android:id="@+id/share_generated_qr"
+            />
+
+    </RelativeLayout>
+</LinearLayout>

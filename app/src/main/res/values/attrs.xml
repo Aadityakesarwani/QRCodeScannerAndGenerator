@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppTheme">
+        <attr name="colorIcons" format="color" />
+        <attr name="colorGeneratorIcons" format="color" />
+        <attr name="colorHistoryIconBackground" format="color" />
+        <attr name="colorHistoryIcons" format="color" />
+        <attr name="colorSelectableItemHighlight" format="color" />
+        <attr name="colorHighlight" format="color" />
+        <attr name="colorNavbarHeaderBackground" format="color" />
+        <attr name="colorNavbarHeaderText" format="color" />
+        <attr name="colorURLHighlight" format="color" />
+    </declare-styleable>
+</resources>

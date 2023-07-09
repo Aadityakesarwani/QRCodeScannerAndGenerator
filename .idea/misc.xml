@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/background_circle.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_address_accent_24dp.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_aztec_code_24dp.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_barcode_24dp.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_key_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_next_plan_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_notes_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_photo_library_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_qr_code_24dp.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_wifi_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_baseline_wifi_lock_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_content_copy_white_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_data_matrix_code_24dp.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_email_accent_24dp.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/ic_person_accent_24dp.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/share.xml" value="0.101" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable-v24/shareapp.xml" value="0.101" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/addevent.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/back.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/background_circle_orange.xml" value="0.1145" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/border.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/call.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/cameraswitch.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/corner.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/darkmode.xml" value="0.132" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/download.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/feedback.xml" value="0.1255" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/frame.xml" value="0.1175" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/generateqr.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/history.xml" value="0.1125" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_baseline_create_24.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_launcher_background.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1075" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_minus.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/ic_no_image_accent_24dp.xml" value="0.1235" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/location.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/no_image.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/openlink.xml" value="0.132" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/person.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/person_add.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/privacy.xml" value="0.1255" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/rate.xml" value="0.1255" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/search.xml" value="0.117" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/selector.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/share.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/shareapp.xml" value="0.101" />
+        <entry key="..\:/Scanner/app/src/main/res/drawable/sound.xml" value="0.132" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_aztech.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_code128.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_code39.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_code93.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_codebar.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_create_url.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_datamatrix.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_ean13.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_ean8.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_email.xml" value="0.1142857142857143" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_generate.xml" value="0.12571428571428572" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_history.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_itf.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_launchscanner.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_location.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_main.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_myqrcode.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_pdf417.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_phone.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_picked_img_result.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_productcodes.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_productx.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_results.xml" value="0.10285714285714286" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_scanner.xml" value="0.10285714285714286" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_setting.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_sms.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_text.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_upca.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_upce.xml" value="0.10285714285714286" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_url.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_wifi.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/activity_wifi_rsult.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/custom_barcode_scanner.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/fragment_frag_set_custom.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/fragment_generate_qr.xml" value="0.10729166666666666" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/fragment_preference.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/fragment_scanner.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/fragment_setting.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/item_history_code.xml" value="0.14285714285714285" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/merge_barcode_scanner.xml" value="0.10285714285714286" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/popup_results.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/layout/wifi_result.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/menu/confirm.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/menu/draweritems.xml" value="0.12135416666666667" />
+        <entry key="..\:/Scanner/app/src/main/res/menu/history.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/menu/iconhistory.xml" value="0.10787037037037037" />
+        <entry key="..\:/Scanner/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Scanner/app/src/main/res/xml/preferences.xml" value="0.10285714285714286" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
